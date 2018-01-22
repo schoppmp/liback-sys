@@ -1,0 +1,19 @@
+[package]
+name = "liback-sys"
+version = "0.1.0"
+authors = ["Phillipp Schoppmann <schoppmann@informatik.hu-berlin.de>"]
+description = "Raw bindings for the Absentminded Crypto Kit"
+license = "AGPL-3.0"
+categories = ["external-ffi-bindings"]
+build = "build.rs"
+links = "ack"
+
+[dependencies]
+libobliv-sys = "0.1.4"
+oblivc = "0.1.1"
+
+[build-dependencies]
+glob = "0.2.11"
+ar = "0.5.0"
+make-cmd = "0.1.0"
+oblivc = "0.1.1"

@@ -1,0 +1,3 @@
+[submodule "absentminded-crypto-kit"]
+	path = absentminded-crypto-kit
+	url = https://bitbucket.org/jackdoerner/absentminded-crypto-kit/
