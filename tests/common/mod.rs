@@ -5,6 +5,7 @@ use std::thread;
 use std::os::raw::{c_int, c_char};
 use std::ffi::CString;
 use self::oblivc::{ProtocolFn};
+use std::env::args_os;
 
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -33,7 +34,11 @@ unsafe fn run_party(args: Vec<String>, p: c_int, run_fn: ProtocolFn) {
     let _args : Vec<_> = ptrs.into_iter().map(|p| CString::from_raw(p)).collect();
 }
 
-pub unsafe fn run_test(args: Vec<String>, run_fn: ProtocolFn) {
+pub unsafe fn run_test(run_fn: ProtocolFn) {
+    let mut args = Vec::new();
+    // copy first argument from args_os
+    let name = args_os().next().expect("argc == 0").into_string().unwrap();
+    args.push(name);
     let server_args = args.clone();
     // pass one to the server, use the other as client
     let server = thread::spawn(move || run_party(server_args, 1, run_fn));

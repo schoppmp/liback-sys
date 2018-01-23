@@ -8,3 +8,5 @@
 //! [1]: https://bitbucket.org/jackdoerner/absentminded-crypto-kit/
 //! [2]: https://schoppmp.github.io/doc/oblivc-rust/oblivc/
 //! [3]: https://github.com/samee/obliv-c
+
+extern crate libobliv_sys;
