@@ -15,7 +15,7 @@ use ar::Builder;
 use walkdir::WalkDir;
 
 fn main() {
-    let ack_path = Path::new("absentminded-crypto-kit");
+    let ack_path = env::current_dir().unwrap().join("absentminded-crypto-kit");
     // update submodule, but ignore if that fails
     if !ack_path.join(".git").exists() {
         let _status = Command::new("git")
