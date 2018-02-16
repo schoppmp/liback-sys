@@ -39,6 +39,13 @@ pub unsafe fn run_test(run_fn: ProtocolFn) {
     // copy first argument from args_os
     let name = args_os().next().expect("argc == 0").into_string().unwrap();
     args.push(name);
+    // get additional arguments from the environment, split them by spaces
+    // this is a nasty hack to allow passing arguments to tests, which cargo doesn't seem to support
+    if let Ok(additional_args) = ::std::env::var("LIBACK_TEST_ARGS") {
+        for arg in additional_args.split_whitespace() {
+            args.push(arg.to_owned());
+        }
+    }
     let server_args = args.clone();
     // pass one to the server, use the other as client
     let server = thread::spawn(move || run_party(server_args, 1, run_fn));
