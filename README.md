@@ -1,4 +1,6 @@
 # liback-sys
+[![Build Status](https://travis-ci.org/schoppmp/oblivc-rust.svg?branch=master)](https://travis-ci.org/schoppmp/oblivc-rust)
+
 This library's purpose is to allow adding the [Absentminded Crypto Kit (ACK)][1] as a dependency
 to Rust projects using the [`oblivc`][2] crate.
 Since ACK's functions are written in [Obliv-C][3], this library does not have a public interface.
