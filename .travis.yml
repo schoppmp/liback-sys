@@ -28,7 +28,7 @@ script:
   # run only a subset of ACK's tests
   - cargo test --verbose --test test_oaes --test test_obig --test test_oqueue
   # run oram test only for sqrt and fss; fss_cprg seems to hang. TODO: debug this
-  - export LIBACK_TEST_ARGS="-o fss"
+  - export LIBACK_TEST_ARGS="-o fssl"
   - cargo test --verbose --test test_oram
   - export LIBACK_TEST_ARGS="-o sqrt"
   - cargo test --verbose --test test_oram

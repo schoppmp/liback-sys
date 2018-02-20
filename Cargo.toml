@@ -13,14 +13,14 @@ links = "ack"
 exclude = ["absentminded-crypto-kit/build/*"]
 
 [dependencies]
-libobliv-sys = "0.1.4"
-oblivc = "0.1.1"
+libobliv-sys = "0.1.5"
+oblivc = "0.1.2"
 
 [build-dependencies]
 glob = "0.2.11"
 ar = "0.5.0"
 make-cmd = "0.1.0"
-libobliv-sys = "0.1.4"
+libobliv-sys = "0.1.5"
 walkdir = "2"
 
 [badges]
