@@ -10,8 +10,14 @@ matrix:
 
 before_install:
   - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+  - sudo add-apt-repository -y ppa:avsm/ppa
   - sudo apt-get -qq update
-  - sudo apt-get install -y ocaml libgcrypt20-dev ocaml-findlib gcc-6
+  - sudo apt-get install -y libgcrypt20-dev gcc-6 m4 ocaml ocaml-native-compilers camlp4-extra opam
+  # get OCaml >= 4.06
+  - opam init -y -a
+  - opam switch -y 4.06.0
+  - eval `opam config env`
+  - opam install -y camlp4 ocamlfind ocamlbuild batteries
   # install rustfmt-nightly (needed by bindgen to correctly format generated sources)
   - rustup install nightly
   - rustup run nightly cargo install rustfmt-nightly --force
