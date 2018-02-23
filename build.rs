@@ -28,7 +28,7 @@ fn main() {
 
     // the following is a hack to allow compilation with glibc >= 2.26
     // see https://github.com/samee/obliv-c/issues/48 and remove if the issue gets fixed
-    env::set_var("CFLAGS", format!("-D_Float128=double -fPIC {}",
+    env::set_var("CFLAGS", format!("-D_Float128=double -fPIC -O3 {}",
         env::var("CFLAGS").unwrap_or("".to_string())));
 
     // start build
