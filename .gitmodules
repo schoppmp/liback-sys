@@ -1,3 +1,6 @@
 [submodule "absentminded-crypto-kit"]
 	path = absentminded-crypto-kit
 	url = https://bitbucket.org/jackdoerner/absentminded-crypto-kit/
+[submodule "oblivc-rust"]
+	path = oblivc-rust
+	url = https://github.com/schoppmp/oblivc-rust/
